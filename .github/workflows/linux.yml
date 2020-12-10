@@ -122,13 +122,13 @@ jobs:
           fi
 
       - name: Move artifact.
-        if: env.UPLOAD_ARTIFACT == 'true'
+        #if: env.UPLOAD_ARTIFACT == 'true'
         run: |
           cd $REPO_NAME/out/Debug/bin
           mkdir artifact
           mv Telegram artifact/
       - uses: actions/upload-artifact@master
-        if: env.UPLOAD_ARTIFACT == 'true'
+        #if: env.UPLOAD_ARTIFACT == 'true'
         name: Upload artifact.
         with:
           name: ${{ env.ARTIFACT_NAME }}
