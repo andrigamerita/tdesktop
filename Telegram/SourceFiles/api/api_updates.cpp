@@ -807,7 +807,7 @@ void Updates::updateOnline(bool gotOtherOffline) {
 	crl::on_main(&session(), [] { Core::App().checkAutoLock(); });
 
 	const auto &config = _session->serverConfig();
-	bool isOnline = Core::App().hasActiveWindow(&session());
+	bool isOnline = false; //Core::App().hasActiveWindow(&session());
 	int updateIn = config.onlineUpdatePeriod;
 	Assert(updateIn >= 0);
 	if (isOnline) {
